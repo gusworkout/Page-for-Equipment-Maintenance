@@ -41,6 +41,18 @@ document.addEventListener("DOMContentLoaded", () => {
             window.open(url, "_blank");
         });
     }
+     const btnSoporte = document.getElementById("IrAWhatsappSoporte");
+
+    if (btn) {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const numero = "573059230920"; 
+            const mensaje = "Hola, tengo una consulta sobre la pagina de mantenimientos.";
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+            window.open(url, "_blank");
+        });
+    }
 
 
 
