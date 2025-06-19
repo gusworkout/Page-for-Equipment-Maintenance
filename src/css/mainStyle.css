@@ -16,6 +16,7 @@ html {
 
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--colorlow);
+    
 
 }
 
@@ -650,7 +651,6 @@ STYLESSS
     transition: .2s ease all;
 }
 
-/* Hide the default checkbox */
 .like-dislike-container .icons .input-box {
     position: absolute;
     opacity: 0;
@@ -890,7 +890,7 @@ STYLESSS
  border: 1rem solid #e8e8e8;
 }
 
-/*Text*/
+
 .textAutor-title {
  text-transform: uppercase;
  font-size: 0.75em;
@@ -906,7 +906,7 @@ STYLESSS
  font-style: italic;
 }
 
-/*Hover*/
+
 .cardAutor:hover .cardAutor-img {
  --size: 110px;
  width: var(--size);
@@ -1001,7 +1001,9 @@ RESPONSIVE
         transition: background-color 0.2s 0s;
         position: relative;
         transform: translateY(30px);
+        margin-left: 5px;
         opacity: 0;
+        width: 100%;
     }
 
     .menu-list::after {
@@ -1064,6 +1066,7 @@ RESPONSIVE
         width: 20px;
         flex-direction: column;
         gap: 3px;
+        justify-content: center;
     }
 
     .bar-list {
@@ -1090,6 +1093,9 @@ RESPONSIVE
     .inp:not(:checked)~.bar>.bottom {
         transform-origin: bottom right;
         transform: translateY(calc(var(--transform) * -1)) rotate(45deg);
+    }
+    .bottom{
+        margin-top: 0;
     }
 
     .texto {

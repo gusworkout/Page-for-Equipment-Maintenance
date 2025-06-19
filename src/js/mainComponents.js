@@ -106,8 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const likeCountElement = document.querySelector(".like-text-content");
     const dislikeCountElement = document.querySelector(".dislike-text-content");
 
+    
     let likeCount = parseInt(likeCountElement.textContent);
     let dislikeCount = parseInt(dislikeCountElement.textContent);
+  
 
     likeCheckbox.addEventListener("change", () => {
         if (likeCheckbox.checked) {
