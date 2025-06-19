@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre nosotros</title>
-    <link rel="stylesheet" href="/src/css/mainStyle.css">
+    <title>Nuestra agenda</title>
+    <link rel="stylesheet" href="src/css/mainStyle.css">
+    <link rel="stylesheet" href="src/css/agendaStyle.css">
 </head>
+
 <body>
-     <header>
+    <header>
         <div class="nav">
             <div class="container">
                 <div class="btn" id="irHome">Home</div>
@@ -30,16 +33,62 @@
                 <span class="bottom bar-list"></span>
             </div>
             <section class="menu-container">
-                <div class="menu-list" id="irHome">Home</div>
-                <div class="menu-list" id="irAgenda">Agenda</div>
-                <div class="menu-list" id="IrAServicios">Servicios</div>
-                <div class="menu-list" id="IrAcercaDe">Acerca de</div>
+                <div class="menu-list" id="irHomeMobile">Home</div>
+                <div class="menu-list" id="irAgendaMobile">Agenda</div>
+                <div class="menu-list" id="IrAServiciosMobile">Servicios</div>
+                <div class="menu-list" id="IrAcercaDeMobile">Acerca de</div>
             </section>
         </label>
 
     </header>
-    <main>
-        
+    <main class="agendamain">
+        <section id="formularioCita">
+            <h2>Agendar una Cita</h2>
+
+            <form class="colorful-form" id="citaForm">
+                <div class="form-group">
+                    <label class="form-label" for="name">Nombre:</label>
+                    <input id="nombre" required="" placeholder="Escribe tu nombre" class="form-input" type="text">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Correo electronico:</label>
+                    <input id="correo" required="" placeholder="Escribe tu correo" class="form-input" name="email"
+                        id="email" type="email">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="telefono">Telefono:</label>
+                    <input id="telefono" required="" placeholder="Escribe tu numero" class="form-input" name="phone"
+                        id="tel" type="tel">
+                </div>
+                <label class="form-label" for="message">Tipo de cita:</label>
+                <div class="radio-inputs">
+                    <label class="radio">
+                        <input type="radio" name="tipoCita" value="Mantenimiento" checked>
+                        <span class="name">Mantenimiento</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="tipoCita" value="Reparación">
+                        <span class="name">Reparación</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="tipoCita" value="Consulta">
+                        <span class="name">Consulta</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message">Escribe tu caso:</label>
+                    <textarea required="" placeholder="Escribe aqui" class="form-input" name="message"
+                        id="mensaje" ></textarea>
+                </div>
+
+                <button class="form-button" type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="listaCitas">
+            <h2>Lista de Citas</h2>
+            <ul id="citasRender"></ul>
+        </section>
     </main>
     <footer>
         <p>&copy; 2025 Gustavo Ochoa - All rights reserved.</p>
@@ -93,6 +142,7 @@
             </li>
         </ul>
     </footer>
-    <script type="module" src="/src/js/mainComponents.js"></script>
+    <script type="module" src="src/js/mainComponents.js"></script>
 </body>
+
 </html>
