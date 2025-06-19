@@ -16,7 +16,7 @@ html {
 
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--colorlow);
-    
+    overscroll-behavior: none;
 
 }
 
@@ -503,8 +503,8 @@ STYLESSS
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-around;
+    gap: 2rem;
     margin-bottom: 3rem;
     width: 100%;
     margin-top: 3rem;
@@ -527,7 +527,7 @@ STYLESSS
     cursor: default;
     color: var(--dark-grey);
     opacity: .9;
-    margin: 40px;
+    margin: 10px;
     padding: 1.5rem;
     font-weight: 600;
     background: var(--lightest-grey);
@@ -563,7 +563,7 @@ STYLESSS
     color: transparent;
     font-size: 0;
     cursor: pointer;
-    background-color: #ff000080;
+    background-color: var(--colorhigh);
     border: none;
     border-radius: var(--border-radius-main);
     transition: .2s ease all;
@@ -848,70 +848,216 @@ STYLESSS
 
 
 .cardAutor {
- width: 190px;
- height: 254px;
- background: #f5f5f5;
- overflow: visible;
- box-shadow: 0 5px 20px 2px rgba(0,0,0,0.1);
- display: flex;
- flex-direction: column;
- align-items: center;
+    width: 190px;
+    height: 254px;
+    background: #f5f5f5;
+    overflow: visible;
+    box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cardAutor-info {
- display: flex;
- flex-direction: column;
- align-items: center;
- gap: 2em;
- padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    padding: 0 1rem;
 }
 
 .cardAutor-img {
- --size: 100px;
- width: var(--size);
- height: var(--size);
- border-radius: 50%;
- transform: translateY(-50%);
- background: #42caff;
- background: linear-gradient(to bottom, var(--colormid) 0%, var(--colorhigh) 100%);
- position: relative;
- transition: all .3s ease-in-out;
+    --size: 100px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background: #42caff;
+    background: linear-gradient(to bottom, var(--colormid) 0%, var(--colorhigh) 100%);
+    position: relative;
+    transition: all .3s ease-in-out;
 }
 
 .cardAutor-img::before {
- content: "";
- border-radius: inherit;
- position: absolute;
- top: 50%;
- left: 50%;
- width: 80%;
- height: 80%;
- transform: translate(-50%, -50%);
- border: 1rem solid #e8e8e8;
+    content: "";
+    border-radius: inherit;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    border: 1rem solid #e8e8e8;
 }
 
 
 .textAutor-title {
- text-transform: uppercase;
- font-size: 0.75em;
- color: var(--colorhigh);
- letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    color: var(--colorhigh);
+    letter-spacing: 0.05rem;
 }
 
 .textAutor-body {
- font-size: .8em;
- text-align: center;
- color: #6f6d78;
- font-weight: 400;
- font-style: italic;
+    font-size: .8em;
+    text-align: center;
+    color: #6f6d78;
+    font-weight: 400;
+    font-style: italic;
 }
 
 
 .cardAutor:hover .cardAutor-img {
- --size: 110px;
- width: var(--size);
- height: var(--size);
+    --size: 110px;
+    width: var(--size);
+    height: var(--size);
 }
+
+
+
+.tooltip-wrapper {
+    --clr-btn: rgb(2 22 36);
+    --clr-dropdown: rgb(2 22 36);
+    --clr-nav-hover: rgb(2 22 36);
+    --clr-dropdown-hov: rgb(2 22 36);
+    --clr-dropdown-link-hov: rgb(2 22 36);
+    --clr-light: #ffffff;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.tooltip-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.tooltip-wrapper>.tooltip-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   flex-direction: column;
+   padding: 0;
+}
+
+.tooltip-container,
+.tooltip-menu-with-icon {
+    list-style: none;
+}
+
+.nav-link>.tooltip-tab {
+    color: var(--clr-light);
+    background: var(--clr-btn);
+    padding: 0.8rem 1rem;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    justify-content: space-between;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid #00c1d5;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-link>.tooltip-tab:hover svg {
+    transform: rotate(360deg);
+    transition: 0.3s ease-in-out;
+}
+
+.tooltip-links {
+    text-decoration: none;
+}
+
+.nav-link svg {
+    fill: #fff;
+}
+
+.tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 12rem;
+    max-width: 15rem;
+    transform: translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    padding: 15px 0px 0px 0px;
+}
+
+.tooltip::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: #00c1d5 no-repeat -30px -50px fixed;
+    top: 0px;
+    left: 6%;
+    position: absolute;
+    display: inline-block;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    transform: rotate(360deg);
+    z-index: -1;
+    box-shadow: 0px 6px 30px rgb(2 22 36);
+}
+
+.tooltip .tooltip-menu-with-icon {
+    padding: 10px 0px;
+    background-color: var(--clr-dropdown);
+    border: 1px solid #00c1d5;
+    position: relative;
+}
+
+.tooltip-link {
+    position: relative;
+}
+
+.tooltip-link:not(:nth-last-child(2)) {
+    border-bottom: 1px solid var(--clr-dropdown);
+}
+
+.tooltip-link>a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 10px;
+    background-color: var(--clr-dropdown);
+    color: var(--clr-light);
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    transition: 0.3s;
+}
+
+.tooltip-menu-with-icon svg {
+    height: 20px;
+    margin-left: 0px;
+}
+
+.nav-link:hover>.tooltip-tab {
+    transform: scale(1.1);
+}
+
+.nav-link:hover>.tooltip,
+.tooltip-link:hover>.tooltip {
+    transform: translate(0, 0);
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+}
+
+.nav-link:hover>.tooltip-tab {
+    transform: scale(1);
+    background-color: var(--clr-nav-hover);
+}
+
 
 
 /*
@@ -1094,7 +1240,8 @@ RESPONSIVE
         transform-origin: bottom right;
         transform: translateY(calc(var(--transform) * -1)) rotate(45deg);
     }
-    .bottom{
+
+    .bottom {
         margin-top: 0;
     }
 

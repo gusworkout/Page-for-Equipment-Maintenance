@@ -57,7 +57,7 @@
 }
 
 .card a:hover {
-  color: red;
+  color: black;
 }
 
 .card button {
@@ -68,7 +68,7 @@
   border: none;
   font-weight: bold;
   background: #ffffff;
-  color: rgb(0, 0, 0);
+  color: var(--colorhigh);
   transition: .4s ease-in-out;
 }
 

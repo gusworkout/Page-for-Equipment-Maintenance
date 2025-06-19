@@ -47,11 +47,11 @@
 
             <form class="colorful-form" id="citaForm">
                 <div class="form-group">
-                    <label class="form-label" for="name">Nombre:</label>
+                    <label class="form-label" for="nombre">Nombre:</label>
                     <input id="nombre" required="" placeholder="Escribe tu nombre" class="form-input" type="text">
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="email">Correo electronico:</label>
+                    <label class="form-label" for="correo">Correo electronico:</label>
                     <input id="correo" required="" placeholder="Escribe tu correo" class="form-input" name="email"
                         id="email" type="email">
                 </div>
@@ -60,7 +60,7 @@
                     <input id="telefono" required="" placeholder="Escribe tu numero" class="form-input" name="phone"
                         id="tel" type="tel">
                 </div>
-                <label class="form-label" for="message">Tipo de cita:</label>
+                <label class="form-label">Tipo de cita:</label>
                 <div class="radio-inputs">
                     <label class="radio">
                         <input type="radio" name="tipoCita" value="Mantenimiento" checked>
@@ -76,7 +76,7 @@
                     </label>
                 </div>
                 <div class="form-group">
-                    <label class="form-label" for="message">Escribe tu caso:</label>
+                    <label class="form-label" for="mensaje">Escribe tu caso:</label>
                     <textarea required="" placeholder="Escribe aqui" class="form-input" name="message"
                         id="mensaje" ></textarea>
                 </div>
@@ -85,9 +85,9 @@
             </form>
         </section>
 
-        <section id="listaCitas">
+        <section class="listarCitas" id="listaCitas">
             <h2>Lista de Citas</h2>
-            <ul id="citasRender"></ul>
+            <ul class="ulcitas" id="citasRender"></ul>
         </section>
     </main>
     <footer>
