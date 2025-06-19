@@ -333,7 +333,7 @@ LISTA DE SERVICIOS
 .listaServicios .btn {
     display: block;
     border-radius: 0.5rem;
-    background-color: var(--colorhigh);
+    background-color: var(--colormid);
     padding: 0.75rem 2rem;
     text-align: center;
     font-size: 0.875rem;
@@ -346,11 +346,11 @@ LISTA DE SERVICIOS
 }
 
 .btn:hover {
-    background-color: rgb(79 70 229);
+    background-color: var(--colorhigh);
 }
 
 .btn:active {
-    background-color: rgb(67 56 202);
+    background-color: var(--colorhigh);
 }
 
 .listaServicios {
@@ -484,7 +484,7 @@ ul {
 
 .example-2 .icon-content a[data-social="youtube"] .filled,
 .example-2 .icon-content a[data-social="youtube"]~.tooltip {
-    background-color: #ff0000;
+    background-color: #139625;
 }
 
 /*
@@ -722,7 +722,7 @@ RESPONSIVE
 
     footer {
         font-size: 1rem;
-
+        height: 250px;
     }
 
 }
