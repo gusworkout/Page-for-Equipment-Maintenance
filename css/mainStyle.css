@@ -5,16 +5,18 @@
 }
 
 
-body {
+body,
+html {
     width: 100%;
-    height: 100vh;
+    min-height: 100dvh;
     margin: 0;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows:
+        auto 1fr auto;
+
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--colorlow);
 
-    justify-content: space-between;
 }
 
 .main {
@@ -112,115 +114,255 @@ CARRUSEL
 */
 
 main {
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
 }
+
+.texto {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    height: 700px;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 700;
+    background: linear-gradient(150deg, var(--colorhigh), #24262a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.highlight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    font-size: 3.5rem;
+    text-align: left;
+}
+
+.texto p {
+    font-size: 2rem;
+    color: var(--colormid);
+}
+
+
+/*
+
+SERVICIOS
+
+*/
 
 .card {
+    width: 570px;
+    height: 254px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 3rem;
+}
+
+.card>* {
+    margin: 0;
+}
+
+.card__title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--colorhigh);
+}
+
+.card__content {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #333;
+    margin: 15px;
+}
+
+.card__form {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.card__form input {
+    outline: 0;
+    margin-left: 10px;
+    background: rgb(255, 255, 255);
+    box-shadow: transparent 0px 0px 0px 1px inset;
+    padding: 0.6em;
+    border-radius: 14px;
+    border: 1px solid var(--colorhigh);
+    color: black;
+}
+
+.card__form button {
+    border: 0;
+    background: var(--colorhigh);
+    color: #fff;
+    padding: 0.68em;
+    border-radius: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sign-up:hover {
+    opacity: 0.9;
+}
+
+/*
+
+LISTA DE SERVICIOS
+
+*/
+
+.pack_card {
     position: relative;
-    width: 90%;
-    height: 350px;
-    background-image: url(
-        "https://tecnoarthardware.com.br/wp-content/uploads/2020/10/Montagem-do-PC-alternativo-ao-PS5-1024x542.png"
-        
-        );
-    background-size: cover;
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    border-radius: 0.5rem;
+    border: 2px solid rgb(99 102 241);
+    padding: 1.5rem 1rem 1rem 1rem;
+    margin-top: 1rem;
+    background-color: #fff;
+    max-width: 300px;
 }
 
-.heading {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--colorlow);
-}
-
-.para {
-    text-align: center;
-    color: var(--colorlow);
-    opacity: 0.7;
-    line-height: 1.4;
-    font-size: 1.2rem;
-    width: 80%;
-}
-
-.overlay {
+.banner {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.card:hover .overlay {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.card .card-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-weight: 600;
-    padding: 10px 20px;
-    font-size: 16px;
-    transform: translate(-50%, -50%);
-    background-color: var(--colorlow);
-    border-radius: 50px;
+    left: 0px;
+    right: 0px;
+    top: -2rem;
     display: flex;
+    justify-content: center;
+}
+
+.banner_tag {
+    display: flex;
+    height: 1.5rem;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    z-index: 999;
-    border: none;
-    opacity: 0;
-    scale: 0;
-    transform-origin: 0 0;
-    box-shadow: 0 0 10px 10px var(--colormid);
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    border-radius: 9999px;
+    background-color: rgb(99 102 241);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fff;
 }
 
-.card:hover .card-btn {
-    opacity: 1;
-    scale: 1;
+.pack_name {
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: rgb(31 41 55);
 }
 
-.card .card-btn:hover {
-    box-shadow: 0 0 0px 5px var(--colorlow);
+.description {
+    margin: 0 auto 2rem auto;
+    text-align: center;
+    color: rgb(107 114 128);
 }
 
-.card .card-btn:active {
-    scale: 0.95;
+.lists> :not([hidden])~ :not([hidden]) {
+    margin-top: 0.5rem;
 }
 
-.overlay::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
+.list {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.list svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    flex-shrink: 0;
+    color: rgb(99 102 241);
+}
+
+.list span {
+    color: rgb(75 85 99);
+}
+
+.bottom {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.price_container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.devise {
+    align-self: flex-start;
+    color: rgb(75 85 99);
+}
+
+.price {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    color: rgb(31 41 55);
+}
+
+.date {
+    color: rgb(107 114 128);
+}
+
+.btn {
+    display: block;
+    border-radius: 0.5rem;
+    background-color: rgb(99 102 241);
+    padding: 0.75rem 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition: all .1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover {
+    background-color: rgb(79 70 229);
+}
+
+.btn:active {
+    background-color: rgb(67 56 202);
+}
+
+.listaServicios {
+    height: 600px;
     width: 100%;
-    height: 100%;
-    filter: opacity(0.5);
-    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 25px;
 }
-
-.card:hover .overlay::after {
-    transform: translate(-50%, -50%) scale(2);
-}
-
-
 
 /*
 
@@ -423,6 +565,7 @@ RESPONSIVE
         overflow: hidden;
         clip-path: inset(0% 0% 0% 0% round 10px);
         transition: all 0.4s;
+        z-index: 1;
     }
 
     .menu-list {
@@ -524,24 +667,56 @@ RESPONSIVE
         transform: translateY(calc(var(--transform) * -1)) rotate(45deg);
     }
 
-    .carrusel-item img {
-        height: 100%;
+    .texto {
+        justify-content: start;
+        gap: 5rem;
+        width: 100%;
+        height: 560px;
+        text-align: center;
+        font-size: 3rem;
+
+
     }
 
-    .heading {
+    .highlight {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        font-size: 2rem;
         text-align: center;
-        font-size: 2.3rem;
-        font-weight: 700;
-        color: var(--colorlow);
     }
 
-    .para {
-        text-align: center;
-        color: var(--colorlow);
-        opacity: 0.7;
-        line-height: 1.4;
+    .texto p {
         font-size: 1rem;
-        width: 80%;
+        width: 90%;
+        color: var(--colormid);
+        margin: 0;
+    }
+
+    .card {
+        width: 340px;
+        height: 254px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+        background: #fff;
+        border-radius: 20px;
+        margin: 1rem;
+    }
+
+    .listaServicios {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 25px;
     }
 
     footer {
