@@ -168,10 +168,11 @@ height: 100%;
 .ulcitas li{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     width: 100%;
-    text-align: center;
+    text-align: left;
+    gap: 20px;
 }
 
 .labelTipoCita, .nombreCita{
@@ -223,6 +224,68 @@ height: 100%;
   transition-duration: .3s;
   box-shadow: 2px 2px 0px rgb(140, 32, 212);
 }
+
+.btn-eliminar {
+min-width: 90px;
+ height: 30px;
+ cursor: pointer;
+ display: flex;
+ align-items: center;
+ background: red;
+ border: none;
+ border-radius: 10px;
+ box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+ background: #e62222;
+}
+
+.btn-eliminar, .btn-eliminar span {
+ transition: 200ms;
+}
+
+.btn-eliminar .text {
+ transform: translateX(9px);
+ color: white;
+ font-weight: bold;
+}
+
+.btn-eliminar .icon {
+ position: absolute;
+ border-left: 1px solid #c41b1b;
+ transform: translateX(90px);
+ height: 20px;
+ width: 20px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.btn-eliminar svg {
+ width: 15px;
+ fill: #eee;
+}
+
+.btn-eliminar:hover {
+ background: #ff3636;
+}
+
+.btn-eliminar:hover .text {
+ color: transparent;
+}
+
+.btn-eliminar:hover .icon {
+ width: 150px;
+ border-left: none;
+ transform: translateX(0);
+}
+
+.btn-eliminar:focus {
+ outline: none;
+}
+
+.btn-eliminar:active .icon svg {
+ transform: scale(0.8);
+}
+
 
 
 @media screen and (max-width: 400px) {
