@@ -916,10 +916,10 @@ STYLESSS
 
 
 .tooltip-wrapper {
-    --clr-btn: rgb(2 22 36);
-    --clr-dropdown: rgb(2 22 36);
-    --clr-nav-hover: rgb(2 22 36);
-    --clr-dropdown-hov: rgb(2 22 36);
+    --clr-btn: rgb(121, 183, 145);
+    --clr-dropdown: rgb(121, 183, 145);
+    --clr-nav-hover: rgb(29, 111, 82);
+    --clr-dropdown-hov: rgb(29, 111, 82);
     --clr-dropdown-link-hov: rgb(2 22 36);
     --clr-light: #ffffff;
 }
