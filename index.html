@@ -54,15 +54,15 @@
             <p class="card__content">
                 Ingresa tu numero de celular y espera nuestra llamada.
             </p>
-            <div class="card__form">
-                <input type="number" placeholder="Tu telefono" />
-                <button title="SignUp" class="sign-up">
+            <form class="card__form" id="numeroAllamar">
+                <input id="numerotelefono" type="tel" placeholder="Tu telefono" />
+                <button title="SignUp" class="sign-up" type="submit">
                     <svg fill="#e8eaed" width="24px" viewBox="0 -960 960 960" height="24px"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"></path>
                     </svg>
                 </button>
-            </div>
+            </form>
         </div>
         <div class="listaServicios" id="comunicarse">
             <div class="pack_card">
@@ -402,6 +402,8 @@
     </footer>
     <script type="module" src="src/js/mainComponents.js"></script>
     <script type="module" src="src/js/mainMobileComponents.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 </body>
 

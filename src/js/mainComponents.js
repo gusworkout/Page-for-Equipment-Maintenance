@@ -147,6 +147,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
         cargarCitas();
     }
+
+    document.getElementById("numeroAllamar").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const tel = document.getElementById("numerotelefono").value
+        if (tel != "") {
+            Swal.fire({
+                title: '¡Espera tu llamada pronto!',
+                text: 'Tu numero ha sido guardado correctamente.',
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+                
+            });
+            this.reset();
+        }else{
+            Swal.fire({
+                title: '¡Espera!',
+                text: 'Debes ingresar tu numero.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+                
+            });
+        }
+
+        
+        
+    });
+
     const likeCheckbox = document.getElementById("like-checkbox");
     const dislikeCheckbox = document.getElementById("dislike-checkbox");
 
