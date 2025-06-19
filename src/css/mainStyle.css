@@ -17,6 +17,7 @@ html {
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--colorlow);
     overscroll-behavior: none;
+    scroll-behavior: smooth;
 
 }
 
@@ -399,9 +400,10 @@ ul {
 .example-2 .icon-content {
     margin: 0 10px;
     position: relative;
+    cursor: pointer;
 }
 
-.example-2 .icon-content .tooltip {
+.example-2 .icon-content .tooltipFooter {
     position: absolute;
     top: -30px;
     left: 50%;
@@ -415,7 +417,7 @@ ul {
     transition: all 0.3s ease;
 }
 
-.example-2 .icon-content:hover .tooltip {
+.example-2 .icon-content:hover .tooltipFooter {
     opacity: 1;
     visibility: visible;
     top: -50px;
@@ -466,17 +468,17 @@ ul {
 }
 
 .example-2 .icon-content a[data-social="linkedin"] .filled,
-.example-2 .icon-content a[data-social="linkedin"]~.tooltip {
+.example-2 .icon-content a[data-social="linkedin"]~.tooltipFooter {
     background-color: #0274b3;
 }
 
 .example-2 .icon-content a[data-social="github"] .filled,
-.example-2 .icon-content a[data-social="github"]~.tooltip {
+.example-2 .icon-content a[data-social="github"]~.tooltipFooter {
     background-color: #24262a;
 }
 
 .example-2 .icon-content a[data-social="instagram"] .filled,
-.example-2 .icon-content a[data-social="instagram"]~.tooltip {
+.example-2 .icon-content a[data-social="instagram"]~.tooltipFooter {
     background: linear-gradient(45deg,
             #405de6,
             #5b51db,
@@ -486,8 +488,8 @@ ul {
             #fd1f1f);
 }
 
-.example-2 .icon-content a[data-social="youtube"] .filled,
-.example-2 .icon-content a[data-social="youtube"]~.tooltip {
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"]~.tooltipFooter {
     background-color: #139625;
 }
 

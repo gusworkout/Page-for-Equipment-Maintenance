@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="">
     <title>Nuestra agenda</title>
     <link rel="stylesheet" href="src/css/mainStyle.css">
     <link rel="stylesheet" href="src/css/agendaStyle.css">
@@ -81,12 +82,12 @@
                         id="mensaje" ></textarea>
                 </div>
 
-                <button class="form-button" type="submit">Submit</button>
+                <button class="form-button" type="submit">REGISTRAR CITA</button>
             </form>
         </section>
 
         <section class="listarCitas" id="listaCitas">
-            <h2>Lista de Citas</h2>
+            <h2>Verifica tu cita</h2>
             <ul class="ulcitas" id="citasRender"></ul>
         </section>
     </main>
@@ -103,7 +104,7 @@
                             fill="currentColor"></path>
                     </svg>
                 </a>
-                <div class="tooltip">Facebook</div>
+                <div class="tooltipFooter">Facebook</div>
             </li>
             <li class="icon-content">
                 <a href="https://www.github.com/" aria-label="GitHub" data-social="github">
@@ -115,7 +116,7 @@
                             fill="currentColor"></path>
                     </svg>
                 </a>
-                <div class="tooltip">GitHub</div>
+                <div class="tooltipFooter">GitHub</div>
             </li>
             <li class="icon-content">
                 <a href="https://www.instagram.com/" aria-label="Instagram" data-social="instagram">
@@ -127,7 +128,7 @@
                             fill="currentColor"></path>
                     </svg>
                 </a>
-                <div class="tooltip">Instagram</div>
+                <div class="tooltipFooter">Instagram</div>
             </li>
             <li class="icon-content">
                 <a href="https://youtube.com/" aria-label="Youtube" data-social="youtube">
@@ -138,11 +139,13 @@
                         </path>
                     </svg>
                 </a>
-                <div class="tooltip">Whatsapp</div>
+                <div class="tooltipFooter">Whatsapp</div>
             </li>
         </ul>
     </footer>
     <script type="module" src="src/js/mainComponents.js"></script>
+        <script type="module" src="src/js/mainMobileComponents.js"></script>
+
 </body>
 
 </html>

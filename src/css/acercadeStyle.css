@@ -4,11 +4,14 @@
     --colorhigh: rgb(121, 183, 145);
 }
 
+.acercaDe{
+    margin: 20px;
+    height: 30em;
+}
 
-
-.card {
+.cardAbout {
   width: 20em;
-  height: 25em;
+  height: 30em;
   background: var(--colorhigh);
   transition: 1s ease-in-out;
   clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
@@ -16,9 +19,13 @@
   border-bottom-left-radius: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin:0;
+  gap: 20px;
 }
 
-.card span {
+.cardAbout span {
   font-weight: bold;
   color: white;
   text-align: center;
@@ -26,7 +33,7 @@
   font-size: 1em;
 }
 
-.card .info {
+.cardAbout .info {
   font-weight: 400;
   color: white;
   display: block;
@@ -36,49 +43,71 @@
   line-height: 1.5rem;
 }
 
-.card .img {
+.cardAbout .img {
   width: 4.8em;
   height: 4.8em;
   background: white;
   border-radius: 15px;
-  margin: auto;
+  
 }
 
-.card .share {
+.cardAbout .share {
   margin-top: 1em;
   display: flex;
   justify-content: center;
   gap: 1em;
 }
 
-.card a {
+.cardAbout a {
   color: white;
   transition: .4s ease-in-out;
 }
 
-.card a:hover {
+.cardAbout a:hover {
   color: black;
 }
 
-.card button {
-  padding: 0.8em 1.7em;
-  display: block;
-  margin: auto;
-  border-radius: 25px;
-  border: none;
-  font-weight: bold;
-  background: #ffffff;
-  color: var(--colorhigh);
-  transition: .4s ease-in-out;
-}
 
-.card button:hover {
-  background: var(--colormid);
-  color: white;
+
+.button-acercade {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
   cursor: pointer;
 }
 
-
+.button-acercade {
+  --border-right: 6px;
+  --text-stroke-color: var(--colorlow);
+  --animation-color: #37FF8B;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--colorhigh);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+.button-acercade:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
 
 
 @media screen and (max-width: 400px) {
