@@ -1068,7 +1068,7 @@ RESPONSIVE
 
 */
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 670px) {
     .nav {
         display: none;
     }

@@ -180,115 +180,72 @@ height: 100%;
     color: var(--colorhigh);
 }
 
-.btn-editar {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  min-width: 90px;
-  height: 30px;
-  border: none;
-  padding: 0px 10px;
-  background-color: var(--colormid);
-  color: var(--colorlow);
-  font-weight: 500;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 5px 5px 0px var(--colorhigh);
-  transition-duration: .3s;
-}
-
-.btn-editar .svg {
-  width: 13px;
-  position: absolute;
-  right: 0;
-  margin-right: 10px;
-  fill: var(--colorlow);
-  transition-duration: .3s;
-}
-
-.btn-editar:hover {
-  color: transparent;
-}
-
-.btn-editar:hover svg {
-  right: 43%;
-  margin: 0;
-  padding: 0;
-  border: none;
-  transition-duration: .3s;
-}
-
-.btn-editar:active {
-  transform: translate(3px , 3px);
-  transition-duration: .3s;
-  box-shadow: 2px 2px 0px rgb(140, 32, 212);
-}
-
-.btn-eliminar {
-min-width: 90px;
- height: 30px;
+.btnControl {
+ appearance: button;
+ background-color: var(--colorhigh);
+ border: solid transparent;
+ border-radius: 16px;
+ border-width: 0 0 4px;
+ box-sizing: border-box;
+ color: #FFFFFF;
  cursor: pointer;
- display: flex;
- align-items: center;
- background: red;
- border: none;
- border-radius: 10px;
- box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
- background: #e62222;
-}
-
-.btn-eliminar, .btn-eliminar span {
- transition: 200ms;
-}
-
-.btn-eliminar .text {
- transform: translateX(9px);
- color: white;
- font-weight: bold;
-}
-
-.btn-eliminar .icon {
- position: absolute;
- border-left: 1px solid #c41b1b;
- transform: translateX(90px);
- height: 20px;
- width: 20px;
- display: flex;
- align-items: center;
- justify-content: center;
-}
-
-.btn-eliminar svg {
- width: 15px;
- fill: #eee;
-}
-
-.btn-eliminar:hover {
- background: #ff3636;
-}
-
-.btn-eliminar:hover .text {
- color: transparent;
-}
-
-.btn-eliminar:hover .icon {
- width: 150px;
- border-left: none;
- transform: translateX(0);
-}
-
-.btn-eliminar:focus {
+ display: inline-block;
+ font-size: 15px;
+ font-weight: 700;
+ letter-spacing: .8px;
+ line-height: 20px;
+ margin: 0;
  outline: none;
+ overflow: visible;
+ padding: 13px 19px;
+ text-align: center;
+ text-transform: uppercase;
+ touch-action: manipulation;
+ transform: translateZ(0);
+ transition: filter .2s;
+ user-select: none;
+ -webkit-user-select: none;
+ vertical-align: middle;
+ white-space: nowrap;
 }
 
-.btn-eliminar:active .icon svg {
- transform: scale(0.8);
+.btnControl:after {
+ background-clip: padding-box;
+ background-color: var(--colormid);
+ border: solid transparent;
+ border-radius: 16px;
+ border-width: 0 0 4px;
+ bottom: -4px;
+ content: "";
+ left: 0;
+ position: absolute;
+ right: 0;
+ top: 0;
+ z-index: -1;
+}
+
+.btnControl:main, .btnControl:focus {
+ user-select: auto;
+}
+
+.btnControl:hover:not(:disabled) {
+ filter: brightness(1.1);
+}
+
+.btnControl:disabled {
+ cursor: auto;
+}
+
+.btnControl:active:after {
+ border-width: 0 0 0px;
+}
+
+.btnControl:active {
+ padding-bottom: 10px;
 }
 
 
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
 
     .agendamain {
         flex-direction: column;
@@ -341,6 +298,14 @@ min-width: 90px;
 .listarCitas {
    width: 100%;
 }
+
+    .contenedorBotones{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
 
 
 }
