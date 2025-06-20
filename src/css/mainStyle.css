@@ -1,6 +1,6 @@
 :root {
     --colorlow: rgb(237, 244, 237);
-    --colormid: rgb(171, 209, 181);
+    --colormid: rgb(156, 201, 168);
     --colorhigh: rgb(121, 183, 145);
 }
 
@@ -15,10 +15,10 @@ html {
         auto 1fr auto;
 
     font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--colorlow);
+    background: linear-gradient(180deg, var(--colorlow), rgba(59, 102, 59, 0.507));
     overscroll-behavior: none;
     scroll-behavior: smooth;
-    
+
 
 }
 
@@ -27,12 +27,15 @@ html {
 }
 
 header {
+    position: absolute;
+    margin-top: 25px;
+    width: 100%;
+    background-color: #00000000;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    z-index: 1;
 }
 
 .outline {
@@ -117,7 +120,8 @@ CARRUSEL
 */
 
 main {
-
+    position: relative;
+    top:0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,6 +130,7 @@ main {
 }
 
 .texto {
+   
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -136,9 +141,13 @@ main {
     text-align: center;
     font-size: 5rem;
     font-weight: 700;
-    background: linear-gradient(150deg, var(--colorhigh), #24262a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-image: url("https://img.freepik.com/premium-photo/closeup-mobile-phone-repairman-using-soldering-iron-integrated-circuit_697211-6417.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+     -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+              mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    /*
+   */
 
 }
 
@@ -156,6 +165,16 @@ main {
     color: var(--colormid);
 }
 
+.logoPrincipal{
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     background: linear-gradient(280deg,  #346549, white,var(--colorhigh));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 /*
 
@@ -382,9 +401,10 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--colormid);
+    background-color: var(--colorhigh);
     font-size: 1rem;
     color: var(--colorlow);
+    box-shadow: 15px 15px 25px 2px #093a16;
 }
 
 ul {
@@ -513,226 +533,6 @@ STYLESSS
     margin-top: 3rem;
 }
 
-
-.like-dislike-container {
-    --dark-grey: #353535;
-    --middle-grey: #767676;
-    --lightest-grey: linear-gradient(#fafafa, #ebebeb);
-    --shadow: 0 5px 15px 0 #00000026;
-    --shadow-active: 0 5px 5px 0 #00000026;
-    --border-radius-main: 10px;
-    --border-radius-icon: 50px;
-    position: relative;
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-    cursor: default;
-    color: var(--dark-grey);
-    opacity: .9;
-    margin: 10px;
-    padding: 1.5rem;
-    font-weight: 600;
-    background: var(--lightest-grey);
-    max-width: max-content;
-    border-radius: var(--border-radius-main);
-    box-shadow: var(--shadow);
-    transition: .2s ease all;
-}
-
-.like-dislike-container:hover {
-    box-shadow: var(--shadow-active);
-}
-
-.like-dislike-container .tool-box {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    top: 0;
-    right: 0;
-    border-radius: var(--border-radius-main);
-}
-
-.like-dislike-container .btn-close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: .8rem;
-    height: .8rem;
-    color: transparent;
-    font-size: 0;
-    cursor: pointer;
-    background-color: var(--colorhigh);
-    border: none;
-    border-radius: var(--border-radius-main);
-    transition: .2s ease all;
-}
-
-.like-dislike-container .btn-close:hover {
-    width: 1rem;
-    height: 1rem;
-    font-size: 1rem;
-    color: #ffffff;
-    background-color: #ff0000cc;
-    box-shadow: var(--shadow-active);
-}
-
-.like-dislike-container .btn-close:active {
-    width: .9rem;
-    height: .9rem;
-    font-size: .9rem;
-    color: #ffffffde;
-    --shadow-btn-close: 0 3px 3px 0 #00000026;
-    box-shadow: var(--shadow-btn-close);
-}
-
-.like-dislike-container .text-content {
-    margin-bottom: 1rem;
-    font-size: 18px;
-    line-height: 1.6;
-    cursor: default;
-}
-
-.like-dislike-container .icons-box {
-    display: flex;
-}
-
-.like-dislike-container .icons {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: .6;
-    margin: 0 0.5rem;
-    cursor: pointer;
-    user-select: none;
-    border: 1px solid var(--middle-grey);
-    border-radius: var(--border-radius-icon);
-    transition: .2s ease all;
-}
-
-.like-dislike-container .icons:hover {
-    opacity: .9;
-    box-shadow: var(--shadow);
-}
-
-.like-dislike-container .icons:active {
-    opacity: .9;
-    box-shadow: var(--shadow-active);
-}
-
-.like-dislike-container .icons .btn-label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 0.5rem;
-    cursor: pointer;
-    position: relative;
-}
-
-.like-dislike-container .like-text-content {
-    border-right: 0.1rem solid var(--dark-grey);
-    padding: 0 0.6rem 0 0.5rem;
-    pointer-events: none;
-}
-
-.like-dislike-container .dislike-text-content {
-    border-left: 0.1rem solid var(--dark-grey);
-    padding: 0 0.5rem 0 0.6rem;
-    pointer-events: none;
-}
-
-.like-dislike-container .icons .svgs {
-    width: 1.3rem;
-    fill: var(--colorhigh);
-    box-sizing: content-box;
-    padding: 10px 10px;
-    transition: .2s ease all;
-}
-
-.like-dislike-container .icons .input-box {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-.like-dislike-container .icons #icon-like-regular {
-    display: block;
-}
-
-.like-dislike-container .icons #icon-like-solid {
-    display: none;
-}
-
-.like-dislike-container .icons:hover :is(#icon-like-solid, #icon-like-regular) {
-    animation: rotate-icon-like 0.7s ease-in-out both;
-}
-
-.like-dislike-container .icons #like-checkbox:checked~#icon-like-regular {
-    display: none;
-    animation: checked-icon-like 0.5s;
-}
-
-.like-dislike-container .icons #like-checkbox:checked~#icon-like-solid {
-    display: block;
-    animation: checked-icon-like 0.5s;
-}
-
-.like-dislike-container .icons #icon-dislike-regular {
-    display: block;
-    transform: rotate(180deg);
-}
-
-.like-dislike-container .icons #icon-dislike-solid {
-    display: none;
-    transform: rotate(180deg);
-}
-
-.like-dislike-container .icons:hover :is(#icon-dislike-solid, #icon-dislike-regular) {
-    animation: rotate-icon-dislike 0.7s ease-in-out both;
-}
-
-.like-dislike-container .icons #dislike-checkbox:checked~#icon-dislike-regular {
-    display: none;
-    animation: checked-icon-dislike 0.5s;
-}
-
-.like-dislike-container .icons #dislike-checkbox:checked~#icon-dislike-solid {
-    display: block;
-    animation: checked-icon-dislike 0.5s;
-}
-
-.like-dislike-container .icons .fireworks {
-    transform: scale(0.4);
-}
-
-.like-dislike-container .icons #like-checkbox:checked~.fireworks>.checked-like-fx {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    right: 40px;
-    border-radius: 50%;
-    box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
-    animation: 1s fireworks-bang ease-out forwards, 1s fireworks-gravity ease-in forwards, 5s fireworks-position linear forwards;
-    animation-duration: 1.25s, 1.25s, 6.25s;
-}
-
-.like-dislike-container .icons #dislike-checkbox:checked~.fireworks>.checked-dislike-fx {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    left: 40px;
-    border-radius: 50%;
-    box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
-    animation: 1s fireworks-bang ease-out forwards, 1s fireworks-gravity ease-in forwards, 5s fireworks-position linear forwards;
-    animation-duration: 1.25s, 1.25s, 6.25s;
-}
 
 /* Shake Animation */
 @keyframes rotate-icon-like {
