@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("numeroAllamar").addEventListener("submit", function (e) {
         e.preventDefault();
         const tel = document.getElementById("numerotelefono").value
-        if (tel != "") {
+        if (tel != "" && tel.toString().length > 9) {
             Swal.fire({
                 title: '¡Espera tu llamada pronto!',
                 text: 'Tu numero ha sido guardado correctamente.',
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }else{
             Swal.fire({
                 title: '¡Espera!',
-                text: 'Debes ingresar tu numero.',
+                text: 'Compureba que estas escribiendo bien tu numero.',
                 icon: 'error',
                 confirmButtonText: 'Aceptar'
                 

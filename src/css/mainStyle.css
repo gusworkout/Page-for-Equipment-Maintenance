@@ -18,6 +18,7 @@ html {
     background-color: var(--colorlow);
     overscroll-behavior: none;
     scroll-behavior: smooth;
+    
 
 }
 
@@ -413,7 +414,7 @@ ul {
     border-radius: 5px;
     opacity: 0;
     visibility: hidden;
-    font-size: 14px;
+    font-size: 12px;
     transition: all 0.3s ease;
 }
 
@@ -429,8 +430,8 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     color: #4d4d4d;
     background-color: var(--colorhigh);
@@ -444,8 +445,8 @@ ul {
 .example-2 .icon-content a svg {
     position: relative;
     z-index: 1;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 .example-2 .icon-content a:hover {
@@ -963,7 +964,7 @@ STYLESSS
     justify-content: space-between;
     text-transform: uppercase;
     cursor: pointer;
-    border: 1px solid #00c1d5;
+    border: 1px solid var(--colorhigh);
     transition: 0.3s ease-in-out;
 }
 
@@ -997,7 +998,7 @@ STYLESSS
     content: "";
     width: 15px;
     height: 15px;
-    background: #00c1d5 no-repeat -30px -50px fixed;
+    background: var(--colorhigh) no-repeat -30px -50px fixed;
     top: 0px;
     left: 6%;
     position: absolute;
@@ -1011,7 +1012,7 @@ STYLESSS
 .tooltip .tooltip-menu-with-icon {
     padding: 10px 0px;
     background-color: var(--clr-dropdown);
-    border: 1px solid #00c1d5;
+    border: 1px solid var(--colorhigh);
     position: relative;
 }
 
