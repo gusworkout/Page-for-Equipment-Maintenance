@@ -6,9 +6,19 @@
 
 .acercaDe{
     
-    margin: 20px;
-    margin-top: 8em;
-    height: 30em;
+    position: relative;
+    z-index: 0;
+    height: 45em;
+    background-image: url("/assets/img/971.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.acercaDe::before{
+  content: "";
+  position: absolute;
+  opacity: 0.5; /* Nivel de opacidad deseado */
+  z-index: -1;
 }
 
 .cardAbout {
@@ -23,7 +33,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin:0;
+  margin-top:5em;
   gap: 20px;
 }
 

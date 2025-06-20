@@ -102,6 +102,7 @@ textarea.form-input {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: auto;
+    font-weight: 800;
 }
 
 .form-button:hover {

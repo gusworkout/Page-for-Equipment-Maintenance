@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const currentPage = window.location.pathname;
+const currentPage = window.location.pathname;
 
     const scrollToOrRedirect = (hash) => {
         if (currentPage.includes("index.html") || currentPage === "/" || currentPage === "/index") {
@@ -9,6 +9,24 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = `index.html${hash}`;
         }
     };
+
+    // ----------- Escritorio -----------
+    document.getElementById("irAgenda")?.addEventListener("click", () => {
+        window.location.href = "agenda.html";
+    });
+
+    document.getElementById("IrAcercaDe")?.addEventListener("click", () => {
+        window.location.href = "acercade.html";
+    });
+
+    document.getElementById("IrAServicios")?.addEventListener("click", () => {
+        scrollToOrRedirect("#comunicarse");
+
+    });
+
+    document.getElementById("irHome")?.addEventListener("click", () => {
+        window.location.href = "index.html";
+    });
 
     // ----------- Móvil -----------
     document.getElementById("irAgendaMobile")?.addEventListener("click", () => {
@@ -29,3 +47,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 });
+
+
